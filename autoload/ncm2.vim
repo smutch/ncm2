@@ -69,7 +69,7 @@ func! ncm2#enable_for_buffer()
         au! * <buffer>
         au Insertenter,InsertLeave <buffer> call s:cache_cleanup()
         au BufEnter <buffer> call s:warmup()
-        au InsertEnter,InsertCharPre,TextChangedI <buffer> call ncm2#auto_trigger()
+        au InsertEnter,InsertCharPre <buffer> call ncm2#auto_trigger()
         if has("patch-8.0.1493")
             au CompleteDone <buffer> call s:on_complete_done()
         endif
